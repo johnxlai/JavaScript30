@@ -9,7 +9,6 @@
   <body>
     <div class="keys">
       <div data-key="65" class="key">
-        <p>TESt</p>
         <kbd>A</kbd>
         <span class="sound">clap</span>
       </div>
@@ -57,6 +56,17 @@
     <audio data-key="75" src="sounds/tom.wav"></audio>
     <audio data-key="76" src="sounds/tink.wav"></audio>
 
-    <script></script>
+    <script>
+      window.addEventListener('keydown', function (e) {
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+        console.log(key);
+
+        if (!audio) return; //stop function from running
+
+        audio.currentTime = 0;
+        audio.play();
+      });
+    </script>
   </body>
 </html>
