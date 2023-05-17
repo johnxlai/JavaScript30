@@ -84,7 +84,17 @@
       let secondsLeft = seconds;
       //total hours
       const hours = Math.floor(secondsLeft / 3600);
+
+      // seconds left
       secondsLeft = secondsLeft % 3600;
+      console.log(secondsLeft);
+
+      // convert to mins
+      const mins = Math.floor(secondsLeft / 60);
+      //update seconds left again
+      secondsLeft = secondsLeft % 60;
+
+      console.log(hours, `hours`, mins, `mins`, secondsLeft, `seconds`);
     </script>
   </body>
 </html>
