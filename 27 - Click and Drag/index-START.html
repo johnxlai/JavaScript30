@@ -42,8 +42,8 @@
       let startX, scrollLeft;
 
       slider.addEventListener('mousedown', (e) => {
-        slider.classList.add('active');
         isDown = true;
+        slider.classList.add('active');
 
         //grab where the mouse was initally clicked
         startX = e.pageX - slider.offsetLeft;
